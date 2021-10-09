@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#C8C8C8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        android:padding="6dp"
+        app:cardUseCompatPadding="true">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="?selectableItemBackground"
     android:orientation="vertical">
 
@@ -24,9 +38,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        tools:text="Всем привет дорогие друзья, я учусь писать код но пока только списываю с преподователя и усучь"
-        android:maxLines="2"
+        tools:text="Всем привет дорогие друзья, я учусь писать код но пока только списываю с преподователя и усучь делать его самостоятельно"
+        android:maxLines="20"
         android:textSize="18sp"
         android:textStyle="italic"/>
 
 </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+</FrameLayout>

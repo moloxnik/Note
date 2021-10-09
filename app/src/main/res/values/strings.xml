@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Note</string>
     <string name="createANote">Создать заметку</string>
+    <string name="saveButtonInEdit">сохранить</string>
 </resources>

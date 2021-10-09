@@ -45,7 +45,7 @@ public class NotesListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.new_note_menu) {
-            openNoteScreen();
+            openNoteScreen(null);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -53,6 +53,7 @@ public class NotesListActivity extends AppCompatActivity {
 
     private void openNoteScreen(@Nullable NoteEntity item) {
         Intent intent = new Intent(this, NoteEditActivity.class);
+
         startActivity(intent);
     }
 
