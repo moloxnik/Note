@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,11 +14,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 import gb.ru.note.R;
 import gb.ru.note.domain.NoteEntity;
 import gb.ru.note.domain.NotesRepo;
 import gb.ru.note.impl.NotesRepoImpl;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+//import androidx.navigation.ui.AppBarConfiguration;
+
+import gb.ru.note.databinding.ActivityMainBinding;
 
 public class NotesListActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -23,6 +36,8 @@ public class NotesListActivity extends AppCompatActivity {
 
     private NotesRepo notesRepo = new NotesRepoImpl();
     private NotesAdapter adapter = new NotesAdapter();
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +53,7 @@ public class NotesListActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.notes_list_menu,menu);
+        getMenuInflater().inflate(R.menu.notes_list_menu, menu);
         return true;
     }
 
@@ -62,7 +77,7 @@ public class NotesListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
-    private void initRecycler(){
+    private void initRecycler() {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -71,16 +86,38 @@ public class NotesListActivity extends AppCompatActivity {
         adapter.setData(notesRepo.getNotes());
     }
 
-    private void onItemClick(NoteEntity item){
+    private void onItemClick(NoteEntity item) {
         openNoteScreen(item);
     }
 
 
-private void fillRepoByTestValues() {
-    notesRepo.createNote(new NoteEntity("Note 1", "english, do you speak it?"));
-    notesRepo.createNote(new NoteEntity("Note 2", "Заметка2"));
-    notesRepo.createNote(new NoteEntity("Note 3", "новый год"));
-    notesRepo.createNote(new NoteEntity("Note 4", "Расписание"));
+   // @Override
+   // protected void onCreate(Bundle savedInstanceState) {
+     //   super.onCreate(savedInstanceState);
+
+       // binding = ActivityMainBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
+
+        //setSupportActionBar(binding.appBarMain.toolbar);
+        //DrawerLayout drawer = binding.drawerLayout;
+        //NavigationView navigationView = binding.navView;
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+     //   mAppBarConfiguration = new AppBarConfiguration.Builder(
+       //         R.id.nav_home, R.id.nav_about_the_app, R.id.nav_settings)
+      //          .setOpenableLayout(drawer)
+         //       .build();
+       // NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+       // NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        //NavigationUI.setupWithNavController(navigationView, navController);
+    //}
+
+
+    private void fillRepoByTestValues() {
+        notesRepo.createNote(new NoteEntity("Note 1", "english, do you speak it?"));
+        notesRepo.createNote(new NoteEntity("Note 2", "Заметка2"));
+        notesRepo.createNote(new NoteEntity("Note 3", "новый год"));
+        notesRepo.createNote(new NoteEntity("Note 4", "Расписание"));
     }
 
 }
