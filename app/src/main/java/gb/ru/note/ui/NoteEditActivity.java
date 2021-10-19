@@ -1,6 +1,8 @@
 package gb.ru.note.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -9,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import gb.ru.note.R;
 import gb.ru.note.domain.NoteEntity;
 
-public class NoteEditActivity extends AppCompatActivity {
+public class NoteEditActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText titleEditText;
     private EditText detailEditText;
     private Button saveButton;
@@ -23,13 +25,21 @@ public class NoteEditActivity extends AppCompatActivity {
         detailEditText = findViewById(R.id.detail_edit_text);
         saveButton = findViewById(R.id.save_button);
 
+
+
         saveButton.setOnClickListener(v -> {
             NoteEntity noteEntity = new NoteEntity(
                     titleEditText.getText().toString(),
-                    titleEditText.getText().toString()
+                    detailEditText.getText().toString()
             );
-            //todo
+
         });
 
+    }
+    public void onClick(View v) {
+        Intent intent = new Intent();
+        intent.putExtra("plot", titleEditText.getText().toString());
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

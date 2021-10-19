@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         tools:text="Всем привет дорогие друзья, я учусь писать код но пока только списываю с преподователя и учучь делать его самостоятельно"
-        android:maxLines="20"
+        android:maxLines="2"
         android:textSize="18sp"
         android:textStyle="italic"/>
 

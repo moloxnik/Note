@@ -68,8 +68,17 @@ public class NotesListActivity extends AppCompatActivity {
 
     private void openNoteScreen(@Nullable NoteEntity item) {
         Intent intent = new Intent(this, NoteEditActivity.class);
+        startActivityForResult(intent,1);
+    }
 
-        startActivity(intent);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data == null) {
+            return;
+        }
+        String name = data.getStringExtra("plot");
+        //todo что то что поставит текст
     }
 
     private void initToolbar() {
