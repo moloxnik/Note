@@ -6,4 +6,6 @@
     <string name="user_name">User Name</string>
     <string name="settings">Settings</string>
     <string name="about_the_app">About the app</string>
+    <string name="enter_the_note">Введите заметку</string>
+    <string name="named_the_note">Введите заголовок</string>
 </resources>

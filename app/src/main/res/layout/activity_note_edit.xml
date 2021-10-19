@@ -11,14 +11,14 @@
         android:id="@+id/title_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Заголовок"
+        android:hint="@string/named_the_note"
         android:textSize="28sp"/>
 
     <EditText
         android:id="@+id/detail_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Текст заметки"
+        android:hint="@string/enter_the_note"
         android:textSize="20sp"/>
 
     <Button
