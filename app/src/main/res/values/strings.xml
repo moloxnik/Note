@@ -1,11 +1,24 @@
 <resources>
     <string name="app_name">Note</string>
-    <string name="createANote">Создать заметку</string>
-    <string name="saveButtonInEdit">сохранить</string>
+    <string name="createANote">create a note</string>
+    <string name="saveButtonInEdit">save</string>
     <string name="username_gmail_com">Username@gmail.com</string>
     <string name="user_name">User Name</string>
-    <string name="settings">Settings</string>
+    <string name="settings">settings</string>
     <string name="about_the_app">About the app</string>
-    <string name="enter_the_note">Введите заметку</string>
-    <string name="named_the_note">Введите заголовок</string>
+    <string name="enter_the_note">enter a note</string>
+    <string name="named_the_note">enter a heading</string>
+    <string name="deleteButtonInEdit">delete</string>
+    <string name="popup_menu_item_edit">fill repo</string>
+    <string name="popup_menu_item_duplicate">duplicate</string>
+    <string name="popup_menu_item_delete">remove</string>
+    <string name="menu_item_button_main">Main</string>
+    <string name="menu_item_button_save_file">Save file</string>
+    <string name="menu_item_button_settings">Sett</string>
+    <string name="enter_file_s_name">Enter file\'s name</string>
+    <string name="save_to_file">Save to file</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="add_data">add data</string>
+    <string name="main_font">main font</string>
+    <string name="optional_font">optional font</string>
 </resources>

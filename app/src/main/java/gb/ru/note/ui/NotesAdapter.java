@@ -12,15 +12,23 @@ import java.util.List;
 
 import gb.ru.note.R;
 import gb.ru.note.domain.NoteEntity;
+import gb.ru.note.listeners.OnItemPopUpMenuClickListener;
 
 public class NotesAdapter extends RecyclerView.Adapter<NoteVh> {
     private List<NoteEntity> data = new ArrayList<>();
-    private OnItemClickListener clickListener= null;
+    private OnItemPopUpMenuClickListener onItemPopUpMenuClickListener;
+    private OnItemClickListener clickListener;
 
-    public void setData(List<NoteEntity> data){
+    public void setData(List<NoteEntity> data) {
         this.data = data;
         notifyDataSetChanged();
     }
+
+    public void setOnItemClickListenerPopUpMenu(OnItemPopUpMenuClickListener onItemPopUpMenuClickListener) {
+        this.onItemPopUpMenuClickListener = onItemPopUpMenuClickListener;
+    }
+
+
 
     @NonNull
     @Override
@@ -30,12 +38,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NoteVh> {
 
     @Override
     public void onBindViewHolder(@NonNull NoteVh holder, int position) {
-        NoteEntity note = getItem(position);
-        holder.bind(note);
-
+        holder.bind(getItem(position));
     }
 
-    private NoteEntity getItem(int position){
+    private NoteEntity getItem(int position) {
         return data.get(position);
     }
 
@@ -44,10 +50,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NoteVh> {
         return data.size();
     }
 
-    public void setOnItemClickListener (OnItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         clickListener = listener;
     }
-    static interface OnItemClickListener{
+
+
+    static interface OnItemClickListener {
         void onItemClick(NoteEntity item);
     }
 }

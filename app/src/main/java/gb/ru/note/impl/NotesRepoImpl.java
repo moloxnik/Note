@@ -1,5 +1,5 @@
 package gb.ru.note.impl;
-
+//имплиметация
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
@@ -39,9 +39,7 @@ public class NotesRepoImpl implements NotesRepo {
 
     @Override
     public boolean updateNote(int id, NoteEntity note) {
-        deleteNote(id);
-        note.setId(id);
-        cache.add(note);
+        cache.set(id-1, note);
         return true;
     }
 }
