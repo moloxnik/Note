@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_margin="16dp"
-    tools:context=".ui.NoteEditActivity">
+    tools:context=".ui.StartActivity">
 
-    <EditText
-        android:id="@+id/title_edit_text"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_note_edit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Заголовок"
-        android:hint="Заголовок"
-        android:textSize="28sp"/>
-
-    <EditText
-        android:id="@+id/detail_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Текст заметки..."
-        android:text="текст заметки"
-        android:textSize="22sp"/>
-
-    <Button
-        android:id="@+id/save_button"
-        android:text="сохранить"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent" />
 
 
-</LinearLayout>
+</FrameLayout>
